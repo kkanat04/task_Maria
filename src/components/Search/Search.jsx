@@ -21,8 +21,8 @@ function Search({ label, params, list }) {
   };
 
   const handleChange = (e) => {
-    setSelect(e.target.value);
-    if (list) {
+    if (list && value) {
+      setSelect(e.target.value);
       dispatch(saveList([]));
       dispatch(setLoading(true));
       navigate(`/results/${e.target.value}/search=${value}`);
